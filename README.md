@@ -18,13 +18,11 @@ npm install
 
 ## Environment
 
-Optional `.env` in `frontend/`:
+All configuration is loaded from `.env`; nothing is hardcoded. Copy `.env.example` to `.env` and set every value.
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `VITE_API_URL` | Backend API base URL | `http://localhost:8000` |
-
-Only needed if the API runs on a different host/port.
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `VITE_API_URL` | Yes | Backend API base URL |
 
 ## Scripts
 
