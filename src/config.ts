@@ -1,6 +1,6 @@
 /**
  * Frontend configuration from environment (.env).
- * All values are loaded via Vite's import.meta.env; no hardcoded defaults.
+ * VITE_API_URL defaults to localhost:8000 when unset so the app runs without .env.
  */
 
 function getEnv(key: string): string {
@@ -8,13 +8,7 @@ function getEnv(key: string): string {
   return typeof val === 'string' ? val.trim() : ''
 }
 
-const VITE_API_URL = getEnv('VITE_API_URL')
-
-if (!VITE_API_URL) {
-  throw new Error(
-    'VITE_API_URL is not set. Copy .env.example to .env and set VITE_API_URL (e.g. your backend URL).'
-  )
-}
+const VITE_API_URL = getEnv('VITE_API_URL') || 'http://localhost:8000'
 
 export const config = {
   apiUrl: VITE_API_URL,
